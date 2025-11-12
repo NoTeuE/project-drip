@@ -1,29 +1,15 @@
-[gd_scene load_steps=4 format=3 uid="uid://bkctrsxngbvr6"]
+[gd_scene load_steps=2 format=3 uid="uid://bkctrsxngbvr6"]
 
-[ext_resource type="Script" uid="uid://btnp0cujqw7xa" path="res://debug/debug_scripts/debug_script.gd" id="1_buvqh"]
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_063nk"]
-size = Vector3(2, 2, 2)
-
-[sub_resource type="BoxMesh" id="BoxMesh_buvqh"]
-size = Vector3(2, 2, 2)
+[ext_resource type="PackedScene" uid="uid://dqsdu2lqrtajr" path="res://scenes/player.tscn" id="1_buvqh"]
 
 [node name="Debug Scene" type="Node3D"]
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3474836, 7.256714)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3474836, 11.256714)
 
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.945819, 5.7191057, 7.8168564)
 light_energy = 9.519
 omni_range = 19.293
 
-[node name="CharacterBody3D" type="CharacterBody3D" parent="."]
-script = ExtResource("1_buvqh")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D"]
-shape = SubResource("BoxShape3D_063nk")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="CharacterBody3D"]
-mesh = SubResource("BoxMesh_buvqh")
-skeleton = NodePath("../..")
+[node name="Player" parent="." instance=ExtResource("1_buvqh")]
