@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://bkctrsxngbvr6"]
+
+[ext_resource type="PackedScene" uid="uid://dqsdu2lqrtajr" path="res://scenes/player.tscn" id="1_buvqh"]
+
+[node name="Debug Scene" type="Node3D"]
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3474836, 11.256714)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.945819, 5.7191057, 7.8168564)
+light_energy = 9.519
+omni_range = 19.293
+
+[node name="Player" parent="." instance=ExtResource("1_buvqh")]
